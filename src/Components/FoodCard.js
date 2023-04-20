@@ -6,7 +6,9 @@ function FoodCard({ props }) {
 
   return (
     <div className="foodcard">
-      <img src={props.img} alt="img" />
+      <div className="foodcard-img-cont">
+        <img src={props.img} alt="img" />
+      </div>
       <div className="foodcard-words-cont">
         <h3>{props.name}</h3>
         <div className="price-like">
