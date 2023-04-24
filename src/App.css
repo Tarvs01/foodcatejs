@@ -18,6 +18,10 @@
   box-sizing: border-box;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 body {
   width: 100vw;
   overflow-x: hidden;
@@ -88,6 +92,17 @@ nav {
   flex-wrap: wrap;
 }
 
+.menu-icon svg {
+  width: 40px;
+  height: 40px;
+}
+
+@media screen and (max-width: 730px) {
+  .nav-menu {
+    order: 2;
+  }
+}
+
 .header-container ul {
   list-style-type: none;
   margin: 0;
@@ -133,6 +148,23 @@ nav {
 .cart {
   fill: var(--primary-color);
   margin-right: 10px;
+}
+
+@media screen and (max-width: 400px) {
+  .cart {
+    margin-right: 0;
+  }
+
+  .sign-up-btn {
+    margin-left: 10px;
+    padding: 9px 13px;
+    font-size: 14px;
+  }
+
+  .menu-icon svg {
+    width: 30px;
+    height: 30px;
+  }
 }
 
 .header-words-cont {
@@ -197,6 +229,48 @@ nav {
 
 header {
   position: relative;
+}
+
+@media screen and (max-width: 800px) {
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .header-add-ons {
+    border: 2px solid purple;
+  }
+
+  .header-words-cont {
+    padding-bottom: 0;
+    width: 100%;
+  }
+
+  .search-container {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .search-container input {
+    width: 100%
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .header-words-cont {
+    margin: 0 10px !important;
+  }
+
+  header {
+    padding-left: 30px;
+    margin-top: 20px;
+  }
+
+  .header-words-cont h1 {
+    font-size: 30px;
+  }
 }
 
 .extra1,

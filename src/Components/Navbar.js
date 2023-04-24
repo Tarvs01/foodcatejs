@@ -1,17 +1,50 @@
 import React from "react";
+import { useState, useEffect } from "react";
 
 function Navbar() {
+  const [size, setSize] = useState(window.innerWidth);
+
+  let updateSize = () => {
+    setSize(window.innerWidth);
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", updateSize);
+    return () => window.removeEventListener("resize", updateSize);
+  });
+
   return (
     <nav>
       <div className="header-container">
         <div className="logo orange">FOODCATE</div>
-        <ul>
-          <li className="orange">Home</li>
-          <li>Cart</li>
-          <li>Food</li>
-          <li>Restaurant</li>
-          <li>Offers</li>
-        </ul>
+        <div className="nav-menu">
+          {size <= 730 && (
+            <div className="menu-icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-list"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
+                />
+              </svg>
+            </div>
+          )}
+          {size > 730 && (
+            <ul>
+              <li className="orange">Home</li>
+              <li>Cart</li>
+              <li>Food</li>
+              <li>Restaurant</li>
+              <li>Offers</li>
+            </ul>
+          )}
+        </div>
         <div className="sign-up-cart-cont">
           <svg
             xmlns="http://www.w3.org/2000/svg"
