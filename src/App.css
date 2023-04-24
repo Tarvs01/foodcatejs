@@ -239,7 +239,8 @@ header {
   }
 
   .header-add-ons {
-    border: 2px solid purple;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .header-words-cont {
@@ -284,6 +285,7 @@ header {
   -ms-border-radius: 300px;
   -o-border-radius: 300px;
   position: absolute;
+  z-index: -100;
 }
 
 .extra1 {
@@ -296,6 +298,13 @@ header {
   -o-transform: rotate(50deg);
 }
 
+@media screen and (max-width: 700px) {
+  .extra1 {
+    top: -250px;
+    right: -170px;
+  }
+}
+
 .extra2 {
   bottom: -130px;
   left: -90px;
@@ -304,7 +313,6 @@ header {
   -moz-transform: rotate(50deg);
   -ms-transform: rotate(50deg);
   -o-transform: rotate(50deg);
-  z-index: -4;
 }
 
 .foods-category-cont {
@@ -323,11 +331,14 @@ header {
   margin: 30px auto;
   overflow: scroll;
   padding-bottom: 10px;
+  width: 100vw;
 }
 
 .foods-category li {
   padding: 10px 10px;
-  min-width: 85px;
+  min-width: 115px;
+  width: max-content;
+  height: fit-content;
   background-color: #eeeeee;
   border-radius: 20px;
   -webkit-border-radius: 20px;
@@ -336,6 +347,14 @@ header {
   -o-border-radius: 20px;
   text-align: center;
   margin: 0 5px;
+}
+
+@media screen and (max-width: 600px) {
+  .foods-category li {
+    font-size: 14px !important;
+    padding: 9px 9px !important;
+    min-width: 95px;
+  }
 }
 
 #first {
@@ -394,18 +413,20 @@ header {
   padding: 1rem;
 }
 
-/* @media screen and (max-width: 500px) {
+@media screen and (max-width: 500px) {
   .foodcards-cont {
     grid-template-columns: 1fr 1fr;
   }
-}
 
-@media screen an
-d (max-width: 300px) {
-  .foodcards-cont {
-    grid-template-columns: 1fr;
+  .foodcard,
+  .restaurantcard {
+    width: 40vw;
   }
-} */
+
+  .foodcard-img-cont {
+    height: fit-content !important;
+  }
+}
 
 ::-webkit-scrollbar {
   height: 7px;
