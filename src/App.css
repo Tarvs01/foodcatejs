@@ -322,6 +322,12 @@ header {
   overflow: scroll;
 }
 
+.foods-category-cont h2 {
+  width: 100%;
+  max-width: 1250px;
+  margin: 0 auto;
+}
+
 .foods-category {
   list-style-type: none;
   font-family: poppins, Arial, Helvetica, sans-serif;
@@ -485,6 +491,7 @@ header {
   flex-direction: column;
   width: 100vw;
   max-width: 500px;
+  z-index: 2;
 }
 
 .order-now-words h1 {
@@ -512,6 +519,56 @@ header {
   height: 300px;
   width: 300px;
   position: relative;
+}
+
+@media screen and (max-width: 600px) {
+  .order-now-add-ons {
+    height: 200px;
+    width: 200px;
+  }
+
+  .circle {
+    height: 250px !important;
+    width: 250px !important;
+  }
+
+  .circle img {
+    height: 300px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .section-order-now {
+    padding-left: 20px;
+  }
+
+  .order-now-words h1 {
+    font-size: 30px;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .order-now-add-ons {
+    display: none;
+  }
+
+  .section-order-now {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .order-now-words {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 10px;
+  }
+
+  .order-now-words h1,
+  .order-now-words p {
+    text-align: center;
+  }
 }
 
 .circle {
@@ -601,6 +658,16 @@ header {
 
   .newsletter-mail-cont button {
     margin-top: 30px;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .newsletter-mail-cont input {
+    width: 100% !important;
+  }
+
+  .newsletter-mail-cont {
+    width: 90%;
   }
 }
 
